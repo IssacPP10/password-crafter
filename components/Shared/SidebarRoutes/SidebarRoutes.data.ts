@@ -1,5 +1,4 @@
-import { CreditCard, Earth, icons, Landmark, LayoutList, Lock, Settings, Star, UserPen } from "lucide-react";
-import { title } from "process";
+import { CreditCard, Earth, Landmark, LayoutList, Lock, Settings, Star, UserPen } from "lucide-react";
 
 export const dataSidebarElements = [
     {

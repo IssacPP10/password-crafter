@@ -23,26 +23,29 @@ import { ViewsAnalyticsChartProps } from "./ViewsAnalyticsChart.types";
 
 export function ViewsAnalyticsChart(props: ViewsAnalyticsChartProps) {
     const {unique, repeated} = props;
-    const chartData = [
-        { browser: "unique", visitors: unique, fill: "var(--color-unique)" },
-        { browser: "repeated", visitors: repeated, fill: "var(--color-repeated)" },    
-      ]
-      const chartConfig = {
-        visitors: {
-          label: "Passwords Totals",
-        },
-        unique: {
-          label: "Unique Pass",
-          color: "hsl(var(--chart-1))",
-        },
-        repeated: {
-          label: "Repeated Pass",
-          color: "hsl(var(--chart-4))",
-        },        
-      } satisfies ChartConfig
-    const totalVisitors = React.useMemo(() => {
-        return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
-      }, [])
+    // Memoriza chartData para evitar re-renderizados innecesarios
+  const chartData = React.useMemo(() => [
+    { browser: "unique", visitors: unique, fill: "var(--color-unique)" },
+    { browser: "repeated", visitors: repeated, fill: "var(--color-repeated)" }
+  ], [unique, repeated]); // Las dependencias deben ser unique y repeated
+
+  const chartConfig = {
+    visitors: {
+      label: "Passwords Totals",
+    },
+    unique: {
+      label: "Unique Pass",
+      color: "hsl(var(--chart-1))",
+    },
+    repeated: {
+      label: "Repeated Pass",
+      color: "hsl(var(--chart-4))",
+    },
+  } satisfies ChartConfig;
+
+  const totalVisitors = React.useMemo(() => {
+    return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
+  }, [chartData]);
     
 
   return (
@@ -103,7 +106,7 @@ export function ViewsAnalyticsChart(props: ViewsAnalyticsChartProps) {
     </CardContent>
     <CardFooter className="flex-col gap-2 text-sm">
       <div className="flex items-center gap-2 font-medium leading-none">
-        Try to don't have the same password <TrendingUp className="h-4 w-4" />
+        Try to dont have the same password <TrendingUp className="h-4 w-4" />
       </div>
       <div className="leading-none text-muted-foreground">
         Showing total passwords created

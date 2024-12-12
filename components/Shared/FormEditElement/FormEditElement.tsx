@@ -59,8 +59,10 @@ export function FormEditElement(props: FormEditElementProps) {
 
       router.push("/");
     } catch (error) {
+      const e = error as Error;
       toast({
         title: "Something went wrong",
+        description: e.message || "An unknown error occurred",
         variant: "destructive",
       });
     }

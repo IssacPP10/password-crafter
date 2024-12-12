@@ -64,8 +64,10 @@ export function FormAddElement(props: FormAddElementProps) {
       closeDialog();
       router.refresh();
     } catch (error) {
+      const e = error as Error;
       toast({
         title:"Something went wrong",
+        description: e.message || "An unknown error occurred",
         variant:"destructive"
       })
     }

@@ -35,7 +35,7 @@ export default async function AnalyticsPage() {
     <div>
       <div className="">
         <h1 className="text-xl md:text-3xl font-semibold">Page Analytics</h1>
-        <p className="my-3">In this section, you can view metrics and information about your passwords. You'll see the total number of unique and repeated passwords.</p>
+        <p className="my-3">In this section, you can view metrics and information about your passwords. You will see the total number of unique and repeated passwords.</p>
       </div>
       <div className="grid md:grid-cols-2 gap-5 mb-4">
         <RepeatedPasswordsChart repeated={repeated} unique={unique} />

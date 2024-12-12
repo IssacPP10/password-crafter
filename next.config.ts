@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
         hostname: "utfs.io",
         port: "",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "readymadeui.com", // Agrega el nuevo dominio aquí
+        port: "",
+        pathname: "/**"
       }
     ]
   }

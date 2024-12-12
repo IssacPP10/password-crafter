@@ -2,7 +2,7 @@
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { toast, useToast } from '@/hooks/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import { copyClipboard } from '@/lib/CopyClipboard'
 import { Copy, Shuffle } from 'lucide-react'
 import { useEffect, useState } from 'react'

@@ -23,9 +23,10 @@ export function TableData({ elements }: TableDataProps) {
       });
     } catch (error) {
       // Muestra el toast de error si algo falla
+      const e = error as Error;
       toast({
         title: "Export Failed",
-        description: "There was an error to exporting the data",
+        description: e.message || "There was an error to exporting the data",
         variant: "destructive"
       });
     }

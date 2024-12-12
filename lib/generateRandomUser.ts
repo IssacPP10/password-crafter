@@ -1,5 +1,3 @@
-import { array } from "zod";
-
 export const generateRandomUsername = (length = 12) => {
     const adjetives = [
         "quick",
@@ -26,7 +24,7 @@ export const generateRandomUsername = (length = 12) => {
         "penguin"
     ];
 
-    const randomItem = (array: any) => array[Math.floor(Math.random() * array.length)];
+    const randomItem = (array: string[]) => array[Math.floor(Math.random() * array.length)];
 
     let username = "";
     username += randomItem(adjetives);
@@ -34,7 +32,7 @@ export const generateRandomUsername = (length = 12) => {
     username += Math.floor(Math.random() * 10000);
 
     if (username.length > length) {
-        username = username.substring(0,length);
+        username = username.substring(0, length);
     }
     return username;
 };

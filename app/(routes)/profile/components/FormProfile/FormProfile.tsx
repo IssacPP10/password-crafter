@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -52,8 +51,10 @@ export function FormProfile(props: FormProfileProps) {
       setShowUploadPhoto(false)
       setPhotoUploaded(false)
     } catch (error) {
+      const e = error as Error;
       toast({
         title: "Something went wrong",
+        description: e.message || "An unknown error occurred",
         variant: "destructive"
       })
     }

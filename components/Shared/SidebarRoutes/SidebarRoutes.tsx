@@ -9,8 +9,6 @@ import { BarChart, DoorClosed, House, RectangleEllipsis } from "lucide-react";
 import Link from "next/link";
 import { SingleItem } from "../SingleItem";
 import { dataSidebarElements, dataSidebarConfiguration } from './SidebarRoutes.data';
-import { title } from 'process';
-import { it } from "node:test";
 import { signOut } from "next-auth/react";
 
 export default function SidebarRoutes() {
